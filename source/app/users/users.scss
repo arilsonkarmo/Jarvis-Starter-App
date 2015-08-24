@@ -1,0 +1,58 @@
+.profile {
+    header {
+        text-align: center;
+        .profile-photo {
+            background-size: 100px 100px;
+            border: #fff solid 1px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            color: #fff;
+            margin: 0 auto;
+            object-fit: cover;
+            overflow: hidden;
+            text-align: center;
+
+            i {
+                object-fit: cover;
+                font-size: 90px;
+            }
+        }
+
+        .tabs-top {
+            position: relative;
+
+            .tabs {
+                top: 0;
+            }
+        }
+    }
+}
+
+.register {
+    background: url('../images/jarvis.png') top 10px center #E98157 no-repeat !important;
+    background-size: 90px 90px !important;
+
+    form {
+        padding-top: 110px;
+    }
+}
+
+.users {
+    .profile-photo {
+        float: left;
+        border: #ccc solid 1px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: #ccc;
+        object-fit: cover;
+        overflow: hidden;
+        text-align: center;
+        margin-right: 15px;
+        i {
+            object-fit: cover;
+            font-size: 45px;
+        }
+    }
+}

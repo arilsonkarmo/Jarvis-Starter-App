@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "Config": {
+            "endpoint": "http://jsonplaceholder.typicode.com"
+        }
+    },
+    "production": {
+        "Config": {
+            "endpoint": "http://jsonplaceholder.typicode.com"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+ion-view(view-title="Profile")
+    ion-content.profile
+        header
+            div.profile-photo
+                i.ion.ion-person
+            h1 {{ profile.name }}
+            p {{ profile.email }}
+
+            div.tabs-striped.tabs-color-assertive.tabs-top
+                div.tabs
+                    a.tab-item(href="#" ng-click="selectTabWithIndex(1)") Me
+                    a.tab-item(href="#" ng-click="selectTabWithIndex(2)") Friends
+                    a.tab-item(href="#" ng-click="selectTabWithIndex(3)") Posts

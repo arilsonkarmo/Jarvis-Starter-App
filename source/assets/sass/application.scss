@@ -1,0 +1,127 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$positive: #E98157 !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../fonts" !default;
+
+// Include all of Ionic
+@import "../../lib/ionic/scss/ionic";
+
+@font-face {
+    font-family: 'TitilliumWeb200';
+    src: url('../fonts/TitilliumWeb200.eot');
+    src: url('../fonts/TitilliumWeb200.eot') format('embedded-opentype'),
+    url('../fonts/TitilliumWeb200.woff2') format('woff2'),
+    url('../fonts/TitilliumWeb200.woff') format('woff'),
+    url('../fonts/TitilliumWeb200.ttf') format('truetype'),
+    url('../fonts/TitilliumWeb200.svg#TitilliumWeb200') format('svg');
+}
+
+body {
+    * {
+        font-family: 'TitilliumWeb200';
+    }
+
+    .bar-header {
+        border-bottom: none !important;
+    }
+
+    .has-header {
+        top: 43px;
+    }
+    
+    ion-side-menu {
+        background: #525252 !important;
+
+        .side-profile {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding-top: 20px;
+
+            h3 {
+                color: #fff;
+                font-size: 1.3em;
+                margin-top: 10px;
+            }
+
+            p {
+                color: #fff;
+            }
+
+            .edit-profile-menu {
+                color: #fff;
+                font-size: 1.8em;
+                text-decoration: none;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .profile-photo {
+                border: #fff solid 1px;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                color: #fff;
+                margin: 0 auto;
+                object-fit: cover;
+                overflow: hidden;
+
+                i {
+                    object-fit: cover;
+                    font-size: 112px;
+                }
+            }
+        }
+
+        ion-item {
+            color: #fff;
+            border-color: #5c5c5c !important;
+            background: transparent !important;
+
+            a {
+                color: #fff !important;
+                border-color: #5c5c5c !important;
+                background: transparent !important;
+
+            }
+        }
+    }
+
+    header {
+        padding-top: 5px;
+        background: $positive;
+        padding-bottom: 5px;
+        color: #fff;
+        position: relative;
+        width: 100%;
+
+        h1 {
+            color: #fff;
+            font-width: bold;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

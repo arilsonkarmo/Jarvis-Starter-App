@@ -1,0 +1,13 @@
+ion-view(view-title="Users")
+    ion-content.users
+        header
+            h1 Select a user
+            p To start
+
+        div.list
+            a.item.item-icon-right(collection-repeat="user in users" href="#")
+                span.item-note {{user.address.city}}
+                div.profile-photo
+                    i.ion.ion-person
+                h2 {{user.name}}
+                p {{user.email}}

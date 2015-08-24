@@ -1,0 +1,13 @@
+{
+  "name": "Jarvis",
+  "app_id": "",
+  "defaultBrowser": true,
+  "documentRoot": "www",
+  "createDocumentRoot": true,
+  "watchPatterns": [
+    "www/**/*"
+  ],
+  "gulpStartupTasks": [
+    "watch"
+  ]
+}

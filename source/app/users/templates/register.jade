@@ -1,0 +1,36 @@
+ion-view(view-title="Register")
+    ion-content.register
+        form(name="form" ng-submit="create(form)" novalidate="")
+            div.list.list-inset
+                label.item.item-input.item-stacked-label(ng-class='{ "has-success": form.name.$valid && submitted,"has-error": form.name.$invalid && submitted }')
+                    span.input-label Your Name <small>(required)</small>
+                    input(type="text" name="name" ng-model="user.name" placeholder="type your name..." minlength="3" maxlength="255" required)
+                    p.help-block(ng-show='form.name.$error.required && submitted')
+                        | <i class="ion ion-information-circled"></i> Name is required
+                label.item.item-input.item-stacked-label(ng-class='{ "has-success": form.email.$valid && submitted,"has-error": form.email.$invalid && submitted }')
+                    span.input-label Your Email <small>(required)</small>
+                    input(type="email" name="email" ng-model="user.email" placeholder="type your email..." minlength="3" maxlength="255" required)
+                    p.help-block(ng-show='form.email.$error.required && submitted')
+                        | <i class="ion ion-information-circled"></i> Email is required
+                label.item.item-input.item-stacked-label(ng-class='{ "has-success": form.phone.$valid && submitted,"has-error": form.phone.$invalid && submitted }')
+                    span.input-label Your Phone <small>(required)</small>
+                    input(type="tel" name="phone" ui-mask="99 9999-99999" placeholder="99 9999-99999" ng-model="user.phone" required)
+                    p.help-block(ng-show='form.phone.$error.required && submitted')
+                        | <i class="ion ion-information-circled"></i> Phone is required
+                label.item.item-input.item-stacked-label
+                    span.input-label City
+                    input(type="text" name="city" placeholder="type your city..." ng-model="user.city")
+                div.item.item-input.item-stacked-label
+                    span.input-label Gender
+                    div.row(style="padding-right: 20px;")
+                        label.item.item-radio.col
+                            input(type="radio" name="gender" value="m" ng-model="user.gender")
+                            div.item-content Male
+                            i.radio-icon.ion-checkmark
+                        label.item.item-radio.col
+                            input(type="radio" name="gender" value="f" ng-model="user.gender")
+                            div.item-content Female
+                            i.radio-icon.ion-checkmark
+
+            div.padding
+                button.button.button-block.button-outline.button-light(type="submit") sign up now

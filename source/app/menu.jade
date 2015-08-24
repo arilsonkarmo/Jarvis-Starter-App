@@ -1,0 +1,20 @@
+ion-side-menus(enable-menu-with-back-views="false")
+    ion-side-menu-content
+        ion-nav-bar.bar-positive
+            ion-nav-back-button
+
+            ion-nav-buttons(side="left")
+                button.button.button-icon.button-clear.ion-navicon(menu-toggle="left")
+
+        ion-nav-view(name="menuContent")
+
+    ion-side-menu(side="left")
+        ion-content
+            div.side-profile
+                div.profile-photo
+                    i.ion.ion-person
+                h3 Jarvis
+                p imnotabot@starkcorp.io
+            ion-list
+                ion-item(menu-close href="#/app/register") Register
+                ion-item(menu-close href="#/app/profile") Profile
