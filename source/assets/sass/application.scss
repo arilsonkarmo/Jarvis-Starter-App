@@ -20,7 +20,7 @@ $positive: #E98157 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../fonts" !default;
 
-// Include all of Ionic
+// Include all of Ionic 
 @import "../../lib/ionic/scss/ionic";
 
 @font-face {
@@ -45,7 +45,7 @@ body {
     .has-header {
         top: 43px;
     }
-    
+
     ion-side-menu {
         background: #525252 !important;
 

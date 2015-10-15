@@ -20,11 +20,28 @@ var plugins = require("gulp-load-plugins")({
 /**
  * Get your index.html configs
  */
+gulp.task('usemin', function (done) {
+    gulp.src('./source/index.html')
+        .pipe(plugins.plumber())
+        .pipe(plugins.usemin({
+            css: [plugins.sass({errLogToConsole: true}), plugins.if(application.env == 'production', plugins.minifyCss()), 'concat'],
+            cssapp: [plugins.sass({errLogToConsole: true}), plugins.if(application.env == 'production', plugins.minifyCss()), 'concat'],
+            jsvendor: [plugins.uglify(), plugins.if(application.env == 'production', plugins.rev())],
+            jsapp: [plugins.uglify(), plugins.if(application.env == 'production', plugins.rev())]
+        }))
+        .pipe(plugins.size())
+        .pipe(gulp.dest(application.basePaths.dest))
+        .on('end', done);
+});
+
+/**
+ * Get your index.html configs
+ */
 gulp.task('cssvendors', function (done) {
     gulp.src('./source/index.html')
         .pipe(plugins.plumber())
         .pipe(plugins.usemin({
-            css: [plugins.sass({errLogToConsole: true}), plugins.if(application.env == 'production', plugins.minifyCss()), 'concat']
+            cssapp: [plugins.sass({errLogToConsole: true}), plugins.if(application.env == 'production', plugins.minifyCss()), 'concat']
         }))
         .pipe(plugins.size())
         .pipe(gulp.dest(application.basePaths.dest))
@@ -120,15 +137,14 @@ gulp.task('constants', function () {
             environment: application.env,
             createModule: false
         }))
-        .pipe(gulp.dest(application.basePaths.dest + '/js'))
+        .pipe(gulp.dest(application.basePaths.dest + '/js'));
 });
 
 gulp.task('default', ['cssvendors', 'cssapp', 'jsvendors', 'jsapp', 'templates', 'images', 'fonts', 'constants']);
 
-gulp.task('watch', function() {
-    gulp.watch(['source/index.html'], ['cssvendors', 'cssapp', 'jsvendors', 'jsapp']);
-    gulp.watch([application.paths.sass], ['cssapp']);
-    gulp.watch([application.paths.scripts], ['jsapp']);
+gulp.task('watch', ['usemin', 'images', 'templates', 'fonts', 'constants'], function() {
+
+    gulp.watch(['source/index.html', application.paths.sass, application.paths.scripts], ['usemin']);
     gulp.watch(application.paths.images, ['images']);
     gulp.watch(application.paths.templates, ['templates']);
     gulp.watch(application.paths.fonts, ['fonts']);
