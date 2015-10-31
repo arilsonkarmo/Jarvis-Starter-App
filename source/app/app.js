@@ -38,3 +38,6 @@ angular.module('Jarvis', ['ionic', 'ngResource', 'Jarvis.config', 'Jarvis.Main',
     .controller('AppController', ['$scope', function ($scope) {
 
     }]);
+    angular.module('Jarvis.Main',[]);
+    angular.module('Jarvis.Config',[]);
+    angular.module('Jarvis.Users',[]);
